@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 // Configure CORS to allow credentials and specific origin
 //vercel vercel
 app.use(cors({
-  origin: 'https://frontend-afcon-worldcup-morocco2025.vercel.app/', // Your frontend URL
+  origin: 'https://frontend-afcon-worldcup-morocc-git-6122d4-mohammed-ams-projects.vercel.app', // Your frontend URL
   credentials: true,
 }));
 
