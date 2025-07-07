@@ -10,25 +10,12 @@ const port = process.env.PORT || 5000;
 
 // Configure CORS to allow credentials and specific origin
 //vercel vercel
-const allowedOrigins = [
-  'https://frontend-afcon-worldcup-morocco2025.vercel.app',
-  /^https:\/\/frontend-afcon-worldcup-morocc-.*-mohammed-ams-projects\.vercel\.app$/
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.some(allowedOrigin => 
-      typeof allowedOrigin === 'string' 
-        ? allowedOrigin === origin 
-        : allowedOrigin.test(origin)
-    )) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: [
+    'https://frontend-afcon-worldcup-morocco2025.vercel.app',
+    'https://frontend-afcon-worldcup-morocc-git-6122d4-mohammed-ams-projects.vercel.app',
+    'https://frontend-afcon-worldcup-morocco2025-organization-qbp37woaz.vercel.app'
+  ],
   credentials: true,
 }));
 
