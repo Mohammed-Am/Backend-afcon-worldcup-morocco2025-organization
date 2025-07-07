@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
@@ -35,5 +35,9 @@ app.use('/users', usersRouter);
 app.use('/teams', teamsRouter);
 app.use('/matches', matchesRouter);
 app.use('/tickets', ticketsRouter);
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the AFCON 2025 API!');
+});
 
 module.exports = app;
