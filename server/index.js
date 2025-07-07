@@ -35,6 +35,4 @@ app.use('/teams', teamsRouter);
 app.use('/matches', matchesRouter);
 app.use('/tickets', ticketsRouter);
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+module.exports = app;
