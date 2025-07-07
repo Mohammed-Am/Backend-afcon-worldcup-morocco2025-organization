@@ -9,6 +9,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Configure CORS to allow credentials and specific origin
+//vercel vercel
 app.use(cors({
   origin: 'http://localhost:3000', // Your frontend URL
   credentials: true,
